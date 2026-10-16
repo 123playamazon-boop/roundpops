@@ -145,6 +145,20 @@ h1.q{font-family:Fraunces,serif;font-weight:800;font-size:23px;line-height:1.28;
 .pricebox .now{font-family:Fraunces,serif;font-weight:900;font-size:46px;color:var(--gold);line-height:1}
 .pricebox .once{color:var(--muted);font-size:13px;margin-top:2px}
 
+/* instructor */
+.instr{display:flex;gap:14px;align-items:center;margin-top:18px;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:14px}
+.instr img{width:92px;height:92px;flex:none;border-radius:14px;object-fit:cover}
+.instr b{font-family:Fraunces,serif;font-size:18px;display:block;margin-top:2px}
+.instr p{margin:5px 0 0;font-size:13px;color:var(--muted)}
+/* guarantee */
+.guar{display:flex;gap:14px;align-items:center;margin-top:16px;background:#f3fbf4;border:1.5px solid #cdebd4;border-radius:18px;padding:14px}
+.guar img{width:74px;height:74px;flex:none;object-fit:contain}
+.guar b{font-size:15.5px}
+.guar p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+/* proof grid */
+.proofgrid{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.proofgrid img{width:100%;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+
 /* sticky CTA */
 .ctawrap{position:fixed;left:0;right:0;bottom:0;z-index:40;background:linear-gradient(to top,var(--bg) 62%,transparent);padding:14px 18px 16px}
 .ctawrap .inner{max-width:560px;margin:0 auto}
@@ -178,8 +192,8 @@ h1.q{font-family:Fraunces,serif;font-weight:800;font-size:23px;line-height:1.28;
 
 <script>
 /* ===== CONFIG ===== */
-var CHECKOUT_URL = "PLACEHOLDER_STRIPE"; // << trocar pelo link de pagamento Stripe ($14.87)
-var YT_ID = "sQDLtMLsv08";               // VSL do produtor (YouTube)
+var CHECKOUT_URL = "https://buy.stripe.com/00w28r8hV0Ql4rd5chfMA0V"; // Stripe payment link $14.87
+var VIDEO_SRC = "";                      // << quando o produtor mandar o .mp4, colar o nome aqui (ex: "vsl.mp4") p/ tocar inline
 var PRICE = "14.87", PRICE_FROM = "97";
 
 /* ===== GAMIFICATION ===== */
@@ -390,8 +404,10 @@ function render(){
   if(s.k==="result"){
     html+='<div class="center"><div class="eyebrow">🎉 Gifts unlocked</div>';
     html+='<h1 class="q" style="margin-top:6px">All set, '+(name||"friend")+'! This is all yours — $'+earned+' in free gifts</h1></div>';
-    html+='<p class="lede center" style="font-size:15px">You unlocked every gift from the gourmet round popcorn method. Watch the short video below, then tap the button to get them right now.</p>';
-    html+='<div class="vwrap"><iframe src="https://www.youtube.com/embed/'+YT_ID+'?rel=0&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+    html+='<p class="lede center" style="font-size:15px">You unlocked every gift from the gourmet round popcorn method. Tap the button below to get them right now.</p>';
+    if(VIDEO_SRC){ html+='<div class="vwrap"><video controls playsinline poster="intro-loop-poster.webp" style="width:100%;height:100%;object-fit:cover"><source src="'+VIDEO_SRC+'" type="video/mp4"></video></div>'; }
+    // Instructor
+    html+='<div class="instr"><img loading="lazy" src="EXPERT.webp" alt="Carmela Vega — Gourmet Popcorn Expert & Instructor"><div><div class="eyebrow">Your instructor</div><b>Carmela Vega</b><p>Gourmet popcorn expert & instructor. She’ll walk you through the entire process step-by-step — from your very first batch to landing big orders.</p></div></div>';
     html+='<div class="gifts"><h3>Everything you get inside Carmela\'s method</h3>'+
       gline("🍿","Irresistible recipes that sell themselves","Over 60 best-selling gourmet flavors.")+
       gline("⏳","The 20-Day Crunch Secret","The exact technique to keep your popcorn perfectly crunchy for 20 days without going stale.")+
@@ -401,6 +417,20 @@ function render(){
       gline("🚀","Business from Scratch","The step-by-step roadmap to start today and get your first customers in just 7 days.")+
       '</div>';
     html+='<div class="pricebox"><div class="from">Normally $'+PRICE_FROM+'</div><div class="now">$'+PRICE+'</div><div class="once">One-time payment · instant access</div></div>';
+    // Guarantee
+    html+='<div class="guar"><img loading="lazy" src="7days.webp" alt="7-day money-back guarantee"><div><b>7-Day Money-Back Guarantee</b><p>Try it risk-free. If you don’t love it, email us within 7 days for a 100% refund — no questions asked.</p></div></div>';
+    // Testimonials / proof
+    html+='<div class="center" style="margin-top:22px"><div class="eyebrow">Real proof from our students who transformed their lives</div></div>';
+    html+='<div class="proofgrid">'+
+      '<img loading="lazy" src="testimonial-2.webp" alt="Student result">'+
+      '<img loading="lazy" src="testimonial-3.webp" alt="Student result">'+
+      '<img loading="lazy" src="testimonial-4.webp" alt="Student result">'+
+      '<img loading="lazy" src="testimonial-5.webp" alt="Student result">'+
+      '<img loading="lazy" src="testimonial-6.webp" alt="Student result">'+
+      '<img loading="lazy" src="proof-1.webp" alt="Student result">'+
+      '<img loading="lazy" src="proof-2.webp" alt="Student result">'+
+      '</div>';
+    html+='<p class="sub center">After payment, you’ll receive an email with access to the online platform.</p>';
     html+='<div class="disc">Results are not guaranteed and vary from person to person. The income figures shown are illustrative examples, not a promise of earnings. This is an educational product.</div>';
     scr.innerHTML=html;
     showCTA("Get my gifts →","🔒 Secure checkout · instant access");

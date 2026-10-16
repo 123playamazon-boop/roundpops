@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Round Popcorn Quiz — Unlock Your Free Gourmet Gifts</title>
+<meta name="description" content="Answer a few quick questions and watch your gift grow with every answer. Takes under 3 minutes.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Karla:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ====== META PIXEL (trocar SEU_PIXEL_ID depois) ====== -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','SEU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<!-- ====== /META PIXEL ====== -->
+
+<!-- ====== Microsoft Clarity (trocar SEU_CLARITY_ID depois) ====== -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","SEU_CLARITY_ID");
+</script>
+<!-- ====== /Clarity ====== -->
+
+<style>
+:root{
+  --bg:#fff8ef; --card:#fffdfa; --ink:#2a2320; --muted:#7c7067; --line:#eadfce;
+  --gold:#BE7A12; --gold2:#e39a26; --red:#d6453a; --green:#1f9d57; --accent:#BE7A12;
+  --sec:#fdeccb;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Karla,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.display{font-family:Fraunces,Georgia,serif}
+img{max-width:100%;display:block}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px}
+
+/* header */
+header.bar{position:sticky;top:0;z-index:20;background:rgba(255,253,250,.96);backdrop-filter:blur(6px);border-bottom:1px dashed var(--line);padding:11px 0}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.earn small{font-size:11px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.3px}
+.earn .amt{font-family:"Space Mono",ui-monospace,monospace;font-size:26px;font-weight:800;color:var(--gold);line-height:1;letter-spacing:-1px}
+.earn .amt sup{font-size:13px;opacity:.6;vertical-align:top}
+.level{flex:none;background:var(--sec);color:#6a4a0f;border-radius:999px;padding:7px 14px;font-size:12px;font-weight:800;white-space:nowrap}
+.pbar{position:relative;margin-top:11px;height:9px;border-radius:999px;background:var(--sec);overflow:visible}
+.pfill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .5s}
+.pnub{position:absolute;top:-9px;font-size:16px;transition:left .5s;transform:translateX(-50%)}
+
+/* screen */
+.screen{padding:22px 0 150px;animation:rise .35s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h1.q{font-family:Fraunces,serif;font-weight:800;font-size:23px;line-height:1.28;margin:4px 0 2px}
+@media(min-width:480px){h1.q{font-size:26px}}
+.lede{font-size:17px;font-weight:600;margin:14px 0 0;color:var(--ink)}
+.hl{color:var(--gold);font-weight:900;white-space:nowrap}
+.hlr{color:var(--red);font-weight:900;white-space:nowrap;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+.hlg{color:var(--gold);font-weight:900;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.sub{color:var(--muted);font-size:14px;margin-top:10px}
+.hero-img{width:112%;margin:16px -6% 0;border-radius:16px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--gold)}
+
+/* options */
+.opts{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:15px;padding:16px 16px;font-size:15.5px;font-weight:700;color:var(--ink);cursor:pointer;transition:.15s;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.opt:hover{border-color:var(--gold);transform:translateY(-1px)}
+.opt .tick{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line)}
+.opt:hover .tick{border-color:var(--gold)}
+
+/* form */
+.field{margin-top:22px}
+.field label{display:block;font-weight:800;font-size:14px;margin-bottom:8px}
+.field input{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:16px;font-size:16px;font-family:inherit;background:var(--card)}
+.field input:focus{outline:none;border-color:var(--gold)}
+
+/* reward chip */
+.reward{display:flex;align-items:center;gap:12px;background:#f3fbf4;border:1.5px solid #cdebd4;border-radius:15px;padding:14px 16px;margin-top:20px}
+.reward .emo{font-size:26px}
+.reward b{display:block;font-size:15px}
+.reward small{color:var(--green);font-weight:800}
+
+/* content cards */
+.tiles{display:grid;grid-template-columns:1fr;gap:11px;margin-top:20px}
+.tile{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:15px;padding:15px}
+.tile .emo{font-size:24px;flex:none}
+.tile b{font-size:15.5px}
+.tile p{margin:3px 0 0;font-size:13.5px;color:var(--muted)}
+
+/* calc table */
+.calc{margin-top:20px;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
+.calc .row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 15px;border-bottom:1px solid var(--line);font-size:14.5px}
+.calc .row:last-child{border-bottom:0}
+.calc .row .l{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--muted)}
+.calc .row .v{font-weight:800;text-align:right}
+.calc .row.big{background:#fff6e6}
+.calc .row.big .v{color:var(--gold);font-size:17px}
+
+/* flavors */
+.flav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.fcard{background:var(--card);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.fcard img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.fcard .fb{padding:11px 12px}
+.fcard b{font-size:14.5px}
+.fcard p{margin:2px 0 0;font-size:12px;color:var(--muted)}
+
+/* timeline */
+.tl{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+.tli{background:var(--card);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.tli img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tli .tb{padding:14px 16px}
+.tli .phase{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.3px}
+.tli .ttl{font-family:Fraunces,serif;font-weight:800;font-size:17px;margin:2px 0 2px}
+.tli .stt{font-size:11px;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:.3px}
+.tli p{margin:7px 0 0;font-size:13.5px;color:var(--muted)}
+
+/* loading */
+.load{text-align:center;padding:40px 0}
+.spin{width:54px;height:54px;border:5px solid var(--sec);border-top-color:var(--gold);border-radius:50%;margin:0 auto 20px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.loadbar{height:9px;border-radius:999px;background:var(--sec);overflow:hidden;margin:18px auto 0;max-width:320px}
+.loadbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));animation:lb 3.4s ease forwards}
+@keyframes lb{to{width:100%}}
+
+/* result / offer */
+.vwrap{margin-top:16px;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.vwrap iframe{width:100%;height:100%;border:0;display:block}
+.gifts{margin-top:18px;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:16px}
+.gifts h3{font-family:Fraunces,serif;margin:0 0 10px;font-size:18px}
+.gline{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.gline:last-child{border-bottom:0}
+.gline .ge{font-size:20px;flex:none}
+.gline b{font-size:14.5px}
+.gline p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.pricebox{margin-top:16px;text-align:center;background:#fff6e6;border:2px solid #f0d49a;border-radius:18px;padding:20px 16px}
+.pricebox .from{color:var(--muted);text-decoration:line-through;font-weight:700}
+.pricebox .now{font-family:Fraunces,serif;font-weight:900;font-size:46px;color:var(--gold);line-height:1}
+.pricebox .once{color:var(--muted);font-size:13px;margin-top:2px}
+
+/* sticky CTA */
+.ctawrap{position:fixed;left:0;right:0;bottom:0;z-index:40;background:linear-gradient(to top,var(--bg) 62%,transparent);padding:14px 18px 16px}
+.ctawrap .inner{max-width:560px;margin:0 auto}
+.cta{display:block;width:100%;text-align:center;background:linear-gradient(180deg,var(--gold2),var(--gold));color:#fff;text-decoration:none;font-weight:900;font-size:17px;border:0;border-radius:15px;padding:17px 18px;cursor:pointer;box-shadow:0 8px 22px rgba(190,122,18,.32);font-family:inherit}
+.cta:active{transform:translateY(1px)}
+.cnote{text-align:center;font-size:11.5px;color:var(--muted);margin-top:8px}
+.urg{text-align:center;font-size:12px;font-weight:800;color:var(--red);margin-top:4px}
+.disc{font-size:10.5px;color:var(--muted);margin-top:14px;text-align:center;line-height:1.45}
+.center{text-align:center}
+</style>
+</head>
+<body>
+
+<header class="bar"><div class="wrap">
+  <div class="hrow">
+    <div class="earn">
+      <small>Answer to start earning</small>
+      <div class="amt"><sup>$</sup><span id="earnAmt">0</span></div>
+    </div>
+    <span class="level"><span id="lvEmo">🌽</span> <span id="lvName">Rookie</span></span>
+  </div>
+  <div class="pbar"><div class="pfill" id="pfill" style="width:4%"></div><span class="pnub" id="pnub" style="left:4%">🍿</span></div>
+</div></header>
+
+<main class="wrap"><div id="screen" class="screen"></div></main>
+
+<div class="ctawrap" id="ctawrap" style="display:none"><div class="inner">
+  <button class="cta" id="ctaBtn"></button>
+  <div class="cnote" id="cnote">⏱️ Takes less than 3 minutes</div>
+</div></div>
+
+<script>
+/* ===== CONFIG ===== */
+var CHECKOUT_URL = "PLACEHOLDER_STRIPE"; // << trocar pelo link de pagamento Stripe ($14.87)
+var YT_ID = "sQDLtMLsv08";               // VSL do produtor (YouTube)
+var PRICE = "14.87", PRICE_FROM = "97";
+
+/* ===== GAMIFICATION ===== */
+var LEVELS=[{at:0,name:"Rookie",emoji:"🌽"},{at:15,name:"Popper",emoji:"🍿"},{at:40,name:"Gourmet",emoji:"👩‍🍳"},{at:70,name:"Boss Lady",emoji:"🏆"}];
+var earned=0, name="";
+function setEarn(add){ if(add){earned+=add;} document.getElementById('earnAmt').textContent=earned;
+  var lv=LEVELS[0]; for(var i=0;i<LEVELS.length;i++){ if(earned>=LEVELS[i].at) lv=LEVELS[i]; }
+  document.getElementById('lvName').textContent=lv.name; document.getElementById('lvEmo').textContent=lv.emoji; }
+
+/* ===== QUIZ DATA (extraído 1:1 do funil original) ===== */
+var STEPS=[
+ {k:"intro",eyebrow:"Round popcorn · Make money from home",
+  h:'Why Are Some Women Making <span class="hlg">$150 in 1 Hour</span>, While Others Work Exhausting for <span class="hlr">$15/Hour</span> or Live on a Retirement Check That Barely Covers the Rent?',
+  img:"intro-loop-poster.webp",
+  lede:'Answer the questions and discover how <span class="hl">round popcorn</span> became a simple and dignified way to make money from home. At the end, you’ll unlock free gifts to learn the step-by-step process and start today.',
+  note:"How to claim your gifts: answer below in under 3 minutes. Every answer earns you points and unlocks your exclusive access at the end!",
+  cta:"I want my gifts"},
+
+ {k:"form",h:"What name should we put on your gift?",label:"Your first name",cta:"Continue"},
+ {k:"reward",emo:"🎁",title:"Gift reserved in your name",val:4},
+
+ {k:"q",h:"{nome}, have you ever worked with artisanal products like gourmet popcorn or similar treats before?",
+  opts:["Yes, I am already a professional.","Yes, I make them as a hobby or for extra income.","No, but I want to learn so I can start making money.","No, I just want to learn for fun as a hobby."]},
+
+ {k:"q",h:"What kind of area do you currently live in?",
+  opts:["Big city or metropolis","Mid-sized city or suburb","Small town","Rural area or countryside"]},
+
+ {k:"reward",emo:"📍",title:"Local selling map",val:8,
+  head:"Perfect! You hit the jackpot with your area, {nome} 📍",
+  body:"Customers around there love unique, handmade treats. With a premium product that practically sells itself, you have the potential to make at least <b>$600 a week</b> at local events, craft fairs, or just right in your neighborhood!"},
+
+ {k:"q",h:"Are you currently working or making an income?",
+  opts:["No, I'm not.","Yes, I have a job.","I just do some side hustles."]},
+
+ {k:"q",h:"{nome}, which of these best describes your current situation?",
+  opts:["I have a job, but I need extra cash to help pay the bills.","I'm burnt out at work and want more freedom and flexibility.","I'm currently out of work and urgently need a fast way to make money.","I'm financially comfortable, just looking for a fun hobby."]},
+
+ {k:"q",h:"What's your experience level with making gourmet round popcorn?",
+  opts:["I'm a complete beginner, no idea where to start.","I've seen how it's made, but never tried it myself.","I've tried a few times, but it never turns out right.","I have experience, but I want to learn professional techniques."]},
+
+ {k:"tiles",h:"Why Round Popcorn crushes regular treats (like cookies and cupcakes)",cta:"Makes sense, continue",
+  tiles:[
+   {e:"⏳",t:"Lasts 20 Days",p:"Make a batch in one single day and have inventory to sell all week long, without worrying about it going stale or getting soggy."},
+   {e:"🎓",t:"Super Easy to Learn",p:"Quick, foolproof techniques. You don't even need to know how to cook to start seeing profits in your very first week."},
+   {e:"🛒",t:"Simple Ingredients",p:"Everything you need is at your local grocery store (or one click away online). No expensive equipment needed."},
+   {e:"🛍️",t:"Sell It Your Way",p:"Start by selling to your neighbors, land massive orders for parties, or build your own premium brand."},
+   {e:"⚡",t:"Lightning-Fast Production",p:"Make dozens of luxurious bags all at once using just the regular pan you already have in your kitchen."},
+   {e:"🎯",t:"Zero Competition",p:"Dominate Instagram, craft fairs, or delivery apps and make up to 4x more profit than traditional bakers."}
+  ]},
+
+ {k:"reward",emo:"🍿",title:"Class: why round popcorn sells",val:11},
+
+ {k:"calc",h:"{nome}, here is a simple breakdown so you can see the true power of round popcorn",cta:"I want these results",
+  rows:[
+   {e:"🛒",l:"Cost to make",v:"$0.90 to $1.50 per bag"},
+   {e:"🏷️",l:"Typical selling price",v:"$8 to $15"},
+   {e:"💰",l:"Pure profit per bag",v:"$7 to $13"},
+   {e:"📅",l:"Selling 10 bags a day (at $12)",v:"$120 a day"},
+   {e:"🚀",l:"In 25 days × $120",v:"$3,000 a month!",big:true}
+  ],
+  foot:"In this example, you cooked everything on just 1 day of the week and only focused on selling the rest of the time. And this is a very realistic calculation, not even counting huge bulk orders for parties and events!"},
+
+ {k:"q",h:"Have you ever taken an online course before?",
+  opts:["Yes, and I completely finished it.","I started one, but never finished it.","No, I've never taken one."]},
+
+ {k:"q",h:"{nome}, as you go through this training, will you have anyone to support you emotionally or financially?",
+  opts:["Yes, absolutely.","Maybe.","No, I am doing this completely on my own."]},
+
+ {k:"note",emo:"🤝",h:"Don't worry! Our focus is to keep everything simple and easy to follow",
+  body:"Even if you have little knowledge, zero experience, or no support system, you will never be alone in this. Here, you'll learn how to work right from your own kitchen, selling a premium treat that is worth 4x more than traditional baked goods.",cta:"Continue"},
+
+ {k:"reward",emo:"✅",title:"Anti-mistake checklist",val:8},
+
+ {k:"flavors",h:"These are just a few of the 60+ best-selling gourmet flavors you'll master",cta:"I want to make these",
+  items:[
+   {img:"oreo.webp",t:"Oreo",p:"A worldwide classic that everyone loves"},
+   {img:"kinderbueno.webp",t:"Kinder Bueno",p:"An exclusive flavor with a sophisticated twist"},
+   {img:"nutella.webp",t:"Nutella",p:"Everyone's favorite hazelnut cream"},
+   {img:"pink-lemonade.webp",t:"Pink Lemonade",p:"Refreshing, citrusy, and irresistible"},
+   {img:"milk-cream.webp",t:"Milk Cream",p:"Smooth, creamy, and nostalgic"},
+   {img:"salted-caramel.webp",t:"Salted Caramel",p:"The perfect balance of sweet and salty"}
+  ]},
+
+ {k:"q",h:"Which of these quotes best describes your current situation?",
+  opts:["“I urgently need to build my financial independence so I can stop living paycheck to paycheck.”","“I want a profitable business that is 100% mine so I never have to rely on anyone else's money.”","“I'm reinventing myself and want to prove I can be successful on my own terms.”","“I already work hard, but I need something with high profit margins to get my time freedom back.”"]},
+
+ {k:"q",h:"If you were making an extra $3,000 a month with round popcorn, what is the first thing you would do with that money, {nome}?",
+  opts:["Quit my 9-to-5 job.","Open my own popcorn shop and work for myself.","Pay off my bills and finally achieve financial freedom.","Build a nest egg so I can retire peacefully on my own terms."]},
+
+ {k:"reward",emo:"🎉",title:"The ultimate party guide",val:16},
+
+ {k:"timeline",h:"Do I need any special skills, prior experience, or startup money? The answer is NO!",cta:"Got it, continue",
+  lede:"With Carmela's method, you will learn the entire process step-by-step. You can start from absolute scratch, using only the tools you already have in your kitchen.",
+  items:[
+   {img:"bullets1.webp",phase:"DAY 1",t:"Just one pan",s:"START TODAY",p:"You start with what you already have in your kitchen, with no expensive equipment."},
+   {img:"bullets2.webp",phase:"DAY 3",t:"No experience needed",s:"ANYONE CAN DO IT",p:"Simple, straight-to-the-point lessons. In a few days you'll make your first perfect bags."},
+   {img:"bullets3.webp",phase:"WEEK 1",t:"You set the price",s:"A MARKET WITH NO COMPETITION",p:"You choose how much to charge. A handmade product with high perceived value and little competition."},
+   {img:"bullets4.webp",phase:"WEEK 2",t:"Sell through the apps",s:"SALES WITHOUT LEAVING HOME",p:"Orders start coming in every day, straight from your kitchen to delivery apps."},
+   {img:"bullets5.webp",phase:"MONTH 1",t:"Large bulk orders",s:"PARTIES, EVENTS, CORPORATE",p:"You start getting big orders for parties and events. That's when it becomes serious income."}
+  ]},
+
+ {k:"reward",emo:"📈",title:"Revenue goals plan",val:11},
+
+ {k:"q",h:"If you unlock these free gifts, do you promise to make the most of this opportunity?",
+  opts:["Maybe.","Probably.","Yes, definitely!"]},
+
+ {k:"q",h:"{nome}, are you ready to see results like the women who are already profiting with round popcorn every single month?",
+  opts:["Maybe!","YES!","ABSOLUTELY!"]},
+
+ {k:"loading",h:"Please wait while your results and free gifts are being generated...",sub:"Unlocking your gifts..."},
+
+ {k:"result"}
+];
+
+/* ===== ENGINE ===== */
+var idx=0, total=STEPS.length;
+var scr=document.getElementById('screen');
+var ctawrap=document.getElementById('ctawrap'), ctaBtn=document.getElementById('ctaBtn'), cnote=document.getElementById('cnote');
+var pfill=document.getElementById('pfill'), pnub=document.getElementById('pnub');
+
+function p(s){ return (s||"").split("{nome}").join(name||"friend"); }
+function progress(){ var pct=Math.max(4, Math.round((idx/(total-1))*100)); pfill.style.width=pct+"%"; pnub.style.left=pct+"%"; }
+function showCTA(label,note){ ctawrap.style.display="block"; ctaBtn.textContent=label; cnote.innerHTML=note||"⏱️ Takes less than 3 minutes"; }
+function hideCTA(){ ctawrap.style.display="none"; }
+function next(){ idx++; if(idx>=total) idx=total-1; render(); window.scrollTo(0,0); }
+
+function render(){
+  var s=STEPS[idx]; progress(); hideCTA(); var html="";
+
+  if(s.k==="intro"){
+    html+='<div class="eyebrow">'+s.eyebrow+'</div>';
+    html+='<h1 class="q" style="margin-top:6px">'+s.h+'</h1>';
+    html+='<img class="hero-img" src="'+s.img+'" alt="Gourmet round popcorn">';
+    html+='<p class="lede">'+s.lede+'</p>';
+    html+='<div class="sub">'+s.note+'</div>';
+    scr.innerHTML=html; showCTA(s.cta+" →"); ctaBtn.onclick=next; return;
+  }
+
+  if(s.k==="form"){
+    html+='<h1 class="q">'+p(s.h)+'</h1>';
+    html+='<div class="field"><label>'+s.label+'</label><input id="nmeInp" type="text" autocomplete="given-name" placeholder="Type here..."></div>';
+    scr.innerHTML=html;
+    var inp=document.getElementById('nmeInp'); inp.focus();
+    showCTA(s.cta+" →");
+    ctaBtn.onclick=function(){ var v=inp.value.trim(); if(!v){inp.focus();return;} name=v.split(" ")[0]; next(); };
+    inp.addEventListener('keydown',function(e){ if(e.key==="Enter") ctaBtn.click(); });
+    return;
+  }
+
+  if(s.k==="reward"){
+    if(s.head) html+='<h1 class="q">'+p(s.head)+'</h1>';
+    if(s.body) html+='<p class="lede" style="font-size:15.5px">'+p(s.body)+'</p>';
+    html+='<div class="reward"><span class="emo">'+s.emo+'</span><div><b>'+s.title+'</b><small>+ $'+s.val+' added to your gift 🎉</small></div></div>';
+    scr.innerHTML=html; setEarn(s.val);
+    showCTA("Continue →"); ctaBtn.onclick=next; return;
+  }
+
+  if(s.k==="q"){
+    html+='<h1 class="q">'+p(s.h)+'</h1><div class="opts">';
+    s.opts.forEach(function(o){ html+='<button class="opt"><span class="tick"></span><span>'+o+'</span></button>'; });
+    html+='</div>';
+    scr.innerHTML=html;
+    [].forEach.call(scr.querySelectorAll('.opt'),function(b){ b.onclick=next; });
+    return;
+  }
+
+  if(s.k==="note"){
+    html+='<div class="center" style="font-size:40px">'+s.emo+'</div>';
+    html+='<h1 class="q center">'+p(s.h)+'</h1>';
+    html+='<p class="lede">'+p(s.body)+'</p>';
+    scr.innerHTML=html; showCTA(s.cta+" →"); ctaBtn.onclick=next; return;
+  }
+
+  if(s.k==="tiles"){
+    html+='<h1 class="q">'+p(s.h)+'</h1><div class="tiles">';
+    s.tiles.forEach(function(t){ html+='<div class="tile"><span class="emo">'+t.e+'</span><div><b>'+t.t+'</b><p>'+t.p+'</p></div></div>'; });
+    html+='</div>';
+    scr.innerHTML=html; showCTA(s.cta+" →"); ctaBtn.onclick=next; return;
+  }
+
+  if(s.k==="calc"){
+    html+='<h1 class="q">'+p(s.h)+'</h1><div class="calc">';
+    s.rows.forEach(function(r){ html+='<div class="row'+(r.big?' big':'')+'"><span class="l">'+r.e+' '+r.l+'</span><span class="v">'+r.v+'</span></div>'; });
+    html+='</div><p class="sub">'+s.foot+'</p>';
+    scr.innerHTML=html; showCTA(s.cta+" →"); ctaBtn.onclick=next; return;
+  }
+
+  if(s.k==="flavors"){
+    html+='<h1 class="q">'+p(s.h)+'</h1><div class="flav">';
+    s.items.forEach(function(f){ html+='<div class="fcard"><img loading="lazy" src="'+f.img+'" alt="'+f.t+'"><div class="fb"><b>'+f.t+'</b><p>'+f.p+'</p></div></div>'; });
+    html+='</div>';
+    scr.innerHTML=html; showCTA(s.cta+" →"); ctaBtn.onclick=next; return;
+  }
+
+  if(s.k==="timeline"){
+    html+='<h1 class="q">'+p(s.h)+'</h1><p class="lede" style="font-size:15.5px">'+p(s.lede)+'</p><div class="tl">';
+    s.items.forEach(function(t){ html+='<div class="tli"><img loading="lazy" src="'+t.img+'" alt="'+t.t+'"><div class="tb"><div class="phase">'+t.phase+'</div><div class="ttl">'+t.t+'</div><div class="stt">'+t.s+'</div><p>'+t.p+'</p></div></div>'; });
+    html+='</div>';
+    scr.innerHTML=html; showCTA(s.cta+" →"); ctaBtn.onclick=next; return;
+  }
+
+  if(s.k==="loading"){
+    html+='<div class="load"><div class="spin"></div><h1 class="q center">'+p(s.h)+'</h1><div class="loadbar"><i></i></div><p class="sub center" style="margin-top:14px">'+s.sub+'</p></div>';
+    scr.innerHTML=html; hideCTA();
+    setTimeout(next,3500); return;
+  }
+
+  if(s.k==="result"){
+    html+='<div class="center"><div class="eyebrow">🎉 Gifts unlocked</div>';
+    html+='<h1 class="q" style="margin-top:6px">All set, '+(name||"friend")+'! This is all yours — $'+earned+' in free gifts</h1></div>';
+    html+='<p class="lede center" style="font-size:15px">You unlocked every gift from the gourmet round popcorn method. Watch the short video below, then tap the button to get them right now.</p>';
+    html+='<div class="vwrap"><iframe src="https://www.youtube.com/embed/'+YT_ID+'?rel=0&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+    html+='<div class="gifts"><h3>Everything you get inside Carmela\'s method</h3>'+
+      gline("🍿","Irresistible recipes that sell themselves","Over 60 best-selling gourmet flavors.")+
+      gline("⏳","The 20-Day Crunch Secret","The exact technique to keep your popcorn perfectly crunchy for 20 days without going stale.")+
+      gline("🎁","Luxury Packaging","How to make your bags look so premium you can easily charge 4x more.")+
+      gline("📱","Done-For-You Captions","A practical guide with ready-to-use posts — just copy, paste, and use every day.")+
+      gline("🎉","The Ultimate Party Guide","How to land huge bulk orders and make a month\'s salary in a single day.")+
+      gline("🚀","Business from Scratch","The step-by-step roadmap to start today and get your first customers in just 7 days.")+
+      '</div>';
+    html+='<div class="pricebox"><div class="from">Normally $'+PRICE_FROM+'</div><div class="now">$'+PRICE+'</div><div class="once">One-time payment · instant access</div></div>';
+    html+='<div class="disc">Results are not guaranteed and vary from person to person. The income figures shown are illustrative examples, not a promise of earnings. This is an educational product.</div>';
+    scr.innerHTML=html;
+    showCTA("Get my gifts →","🔒 Secure checkout · instant access");
+    document.querySelector('.urg')&&0;
+    cnote.innerHTML="🔒 Secure checkout · instant access";
+    // add urgency line
+    var u=document.createElement('div'); u.className='urg'; u.textContent='⏳ Reservation valid for a limited time'; cnote.parentNode.insertBefore(u,cnote.nextSibling);
+    ctaBtn.onclick=function(){
+      try{ if(window.fbq) fbq('track','InitiateCheckout',{value:parseFloat(PRICE),currency:'USD'}); }catch(e){}
+      if(CHECKOUT_URL && CHECKOUT_URL.indexOf('http')===0){ location.href=CHECKOUT_URL+(location.search||""); }
+    };
+    return;
+  }
+}
+function gline(e,t,p){ return '<div class="gline"><span class="ge">'+e+'</span><div><b>'+t+'</b><p>'+p+'</p></div></div>'; }
+
+setEarn(0); render();
+</script>
+</body>
+</html>

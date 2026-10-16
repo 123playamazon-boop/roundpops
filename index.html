@@ -161,6 +161,10 @@ h1.q{font-family:Fraunces,serif;font-weight:800;font-size:23px;line-height:1.28;
 /* proof grid */
 .proofgrid{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .proofgrid img{width:100%;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+.ugc{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ugc figure{margin:0;background:var(--card);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.ugc img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.ugc figcaption{font-size:12px;font-weight:700;color:var(--muted);padding:9px 10px;text-align:center}
 
 /* CTA — inline (sits right under the content) on quiz screens */
 .ctawrap{padding:12px 0 8px}
@@ -215,7 +219,7 @@ function setEarn(add){ if(add){earned+=add;} document.getElementById('earnAmt').
 var STEPS=[
  {k:"intro",eyebrow:"The $12 Bag Method · Make money from your kitchen",
   h:'How Are Everyday Women Turning a <span class="hlg">$1 Bag of Popcorn</span> Into <span class="hlg">$12</span> — and Quietly Pocketing <span class="hlr">$600+ a Week</span> From Their Own Kitchen?',
-  img:"intro-loop-poster.webp",
+  img:"hero.webp",
   lede:'It’s called <span class="hl">The $12 Bag Method</span> — the simple, dignified way women with zero experience turn one pan and about $1 of ingredients into gourmet bags that sell for $8–$15 and practically sell themselves. Answer a few quick questions and you’ll unlock free gifts to start this week — <b>even if you’ve never cooked, never sold a thing, and have no startup money.</b>',
   note:"How to claim your gifts: answer below in under 3 minutes. Every answer adds to your free gift bundle and unlocks your exclusive access at the end!",
   cta:"I want my gifts"},
@@ -414,9 +418,16 @@ function render(){
     html+='<div class="center"><div class="eyebrow">🎉 Gifts unlocked</div>';
     html+='<h1 class="q" style="margin-top:6px">All set, '+(name||"friend")+'! You unlocked $'+earned+' in free gifts inside The $12 Bag Method</h1></div>';
     html+='<p class="lede center" style="font-size:15px">Everything below is reserved in your name. Tap the button and get instant access — start your first batch this week.</p>';
-    if(VIDEO_SRC){ html+='<div class="vwrap"><video controls playsinline poster="intro-loop-poster.webp" style="width:100%;height:100%;object-fit:cover"><source src="'+VIDEO_SRC+'" type="video/mp4"></video></div>'; }
+    if(VIDEO_SRC){ html+='<div class="vwrap"><video controls playsinline poster="hero.webp" style="width:100%;height:100%;object-fit:cover"><source src="'+VIDEO_SRC+'" type="video/mp4"></video></div>'; }
     // Instructor
-    html+='<div class="instr"><img loading="lazy" src="EXPERT.webp" alt="Carmela Vega — Gourmet Popcorn Expert & Instructor"><div><div class="eyebrow">Your instructor</div><b>Carmela Vega</b><p>Gourmet popcorn expert & instructor. She’ll walk you through the entire process step-by-step — from your very first batch to landing big orders.</p></div></div>';
+    html+='<div class="instr"><img loading="lazy" src="instr.webp" alt="Carmela Vega — Gourmet Popcorn Expert & Instructor"><div><div class="eyebrow">Your instructor</div><b>Carmela Vega</b><p>Gourmet popcorn expert & instructor. She’ll walk you through the entire process step-by-step — from your very first batch to landing big orders.</p></div></div>';
+    html+='<div class="center" style="margin-top:20px"><div class="eyebrow">A peek inside The $12 Bag Method</div></div>';
+    html+='<div class="ugc">'+
+      '<figure><img loading="lazy" src="gift-recipes.webp" alt="60+ gourmet recipes"><figcaption>60+ gourmet recipes</figcaption></figure>'+
+      '<figure><img loading="lazy" src="gift-kit.webp" alt="Luxury packaging kit"><figcaption>Packaging that sells itself</figcaption></figure>'+
+      '<figure><img loading="lazy" src="proof-market.webp" alt="Selling at a market"><figcaption>Sell at fairs &amp; markets</figcaption></figure>'+
+      '<figure><img loading="lazy" src="ingredients.webp" alt="Simple ingredients"><figcaption>Simple ingredients, one pan</figcaption></figure>'+
+      '</div>';
     html+='<div class="gifts"><h3>Everything you get inside The $12 Bag Method</h3>'+
       gline("🍿","Irresistible recipes that sell themselves","Over 60 best-selling gourmet flavors, step-by-step.","$97")+
       gline("⏳","The 20-Day Crunch Secret","The exact technique to keep your popcorn perfectly crunchy for 20 days without going stale.","$47")+
